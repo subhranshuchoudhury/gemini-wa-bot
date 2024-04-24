@@ -57,8 +57,13 @@ const chat = model.startChat({
   ],
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 app.post("/api/message", async (req, res) => {
   const { message } = req.body.query;
+  console.log("Message: ", message);
   if (!message)
     return res.status(400).json({
       replies: [
