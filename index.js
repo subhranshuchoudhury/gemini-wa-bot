@@ -83,7 +83,8 @@ app.post("/api/message", async (req, res) => {
       ],
     });
   } catch (error) {
-    res.status(500).json({
+    console.log("Error: ", error);
+    res.status(200).json({
       replies: [
         {
           message: "Sorry, I am unable to process your request at the moment",
